@@ -1,4 +1,4 @@
-# MCrypt-for-Android
+# MCrypt-for-Android using Simcard Serialnumber and Device ID as Secret Key
 Encrypt decrypt using Android and PHP
 
 For Android
