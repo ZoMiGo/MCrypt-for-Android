@@ -58,6 +58,4 @@ class Decoder
 	  return substr($text, 0, -1 * $pad);
     }
 }
-include("test.php");
-
 ?>
