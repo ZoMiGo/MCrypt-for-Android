@@ -3,6 +3,7 @@
 Encrypt / Decrypt Between Android and PHP and vice-versa HOW TO USE IT (JAVA)
 
 MCrypt mcrypt = new MCrypt(); 
+
 new MCrypt(con);
 
 /* Encrypt */
