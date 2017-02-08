@@ -12,7 +12,7 @@ String encrypted = MCrypt.bytesToHex( mcrypt.encrypt("Text to Encrypt") );
 
 /* Decrypt */
 
-String decrypted = new String( mcrypt.decrypt( encrypted ) ); HOW TO USE IT (PHP)
+String decrypted = new String( mcrypt.decrypt( encrypted ) ); 
 
 exemple for Android:
 ##############################################################################################
@@ -20,6 +20,8 @@ exemple for Android:
             MCrypt mcrypt = new MCrypt();
 						String id = new String( MCrypt.decrypt(job.getString("id") ));
 						String name = new String( MCrypt.decrypt(job.getString("name") ));
+
+HOW TO USE IT (PHP)
 
 $kodiranje = new Decoder();
 
