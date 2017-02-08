@@ -19,7 +19,6 @@ exemple for Android:
             MCrypt mcrypt = new MCrypt();
 						String id = new String( MCrypt.decrypt(job.getString("id") ));
 						String name = new String( MCrypt.decrypt(job.getString("name") ));
-##############################################################################################            
 
 $kodiranje = new Decoder();
 
