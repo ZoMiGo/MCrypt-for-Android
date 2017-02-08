@@ -1,4 +1,5 @@
 <?php
+// Check User by Email if user Account Exixt on Database write Simcardserialnumber and DeviceID
 if(isset($_POST['email']) && isset($_POST['password'])  && isset($_POST['category'])){
 	$password = $_POST['password'];
 	$email = $_POST['email'];
