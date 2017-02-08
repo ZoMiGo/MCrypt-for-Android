@@ -1,6 +1,8 @@
 #Android-PHP-Encrypt-Decrypt using Device IMEI and Simcardserialnumber
 
-Encrypt / Decrypt Between Android and PHP and vice-versa HOW TO USE IT (JAVA)
+Encrypt / Decrypt Between Android and PHP and vice-versa 
+
+HOW TO USE IT (JAVA)
 
 MCrypt mcrypt = new MCrypt(); 
 
