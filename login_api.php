@@ -1,13 +1,10 @@
 <?php
-
-
-
 if(isset($_POST['email']) && isset($_POST['password'])  && isset($_POST['category'])){
 	$password = $_POST['password'];
 	$email = $_POST['email'];
 	$category=$_POST['category'];
-	$imei = $_POST['IMEI'];
-	$serial = $_POST['simnr'];
+	$imei = $_POST['IMEI'];  //Save DeviceID to Database 
+	$serial = $_POST['simnr']; // Save Simcard Serialnumber to Database
 
 
 		$response = array();
