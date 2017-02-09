@@ -8,8 +8,6 @@ require_once('includes/database.class.php');
 
 $db= new database($pdo);
 $db = new DB_CONNECT();
-//Pass your driver number here
-
 
 $driver_email = $_POST['user_email'];
 $config['Decoder'] = array();
@@ -22,13 +20,11 @@ foreach($users as $citai);
 $config['Decoder']['kljuc'] = $citai["kljuc"];
 $config['Decoder']['key'] = $citai["superkljuc"];
 
-/// ENDE CITANJE KLJUCA IZ BAZE PODATAKA ///
-
 #Encrypt
 $kodiranje = new Decoder();
 
 
-$result = mysql_query("select * from transport where driver_email = '$driver_email' ORDER BY termin "); 
+$result = mysql_query("select * from transport where driver_email = '$driver_email' ORDER BY termin ");
 
 
 	if($result){
@@ -39,9 +35,7 @@ $result = mysql_query("select * from transport where driver_email = '$driver_ema
 					$infos["sender_id"]=$kodiranje->encrypt($rowBooking["sender_id"]);
 					$infos["name"]=$kodiranje->encrypt($rowBooking["name"]);
           $infos["accept"]=$rowBooking["accept"];
-
-
-					array_push($response["ridelist"], $infos);
+    	array_push($response["ridelist"], $infos);
 				}
 			$response["success"] = 1;
 			$response["message"] = "Loading Data successful.";
