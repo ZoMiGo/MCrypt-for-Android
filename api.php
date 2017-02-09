@@ -17,8 +17,13 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $users = $stmt->fetchAll();
 foreach($users as $citai);
+<<<<<<< HEAD
 $config['Decoder']['kljuc'] = $citai["kljuc"];
 $config['Decoder']['key'] = $citai["superkljuc"];
+=======
+$config['Decoder']['kljuc'] = $citai["kljuc"]; //Read User Simcardserialnumber from Database and use it for Encrypt the data
+$config['Decoder']['key'] = $citai["superkljuc"]; // Read User DeviceID from Database and use it for Encrypt the data
+>>>>>>> origin/master
 
 #Encrypt
 $kodiranje = new Decoder();
@@ -28,12 +33,12 @@ $result = mysql_query("select * from transport where driver_email = '$driver_ema
 
 
 	if($result){
-		$response["ridelist"] = array();
-		while ($rowBooking=mysql_fetch_array($result)) {
-					$infos=array();
-					$infos["id"]=$kodiranje->encrypt($rowBooking["id"]);
-					$infos["sender_id"]=$kodiranje->encrypt($rowBooking["sender_id"]);
-					$infos["name"]=$kodiranje->encrypt($rowBooking["name"]);
+	$response["ridelist"] = array();
+	while ($rowBooking=mysql_fetch_array($result)) {
+	  $infos=array();
+	  $infos["id"]=$kodiranje->encrypt($rowBooking["id"]);
+	  $infos["sender_id"]=$kodiranje->encrypt($rowBooking["sender_id"]);
+          $infos["name"]=$kodiranje->encrypt($rowBooking["name"]);
           $infos["accept"]=$rowBooking["accept"];
     	array_push($response["ridelist"], $infos);
 				}

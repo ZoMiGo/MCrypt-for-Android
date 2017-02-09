@@ -20,13 +20,12 @@ public class MCrypt {
     private static SecretKeySpec keyspec;
     private static Cipher cipher;
 
-    MCrypt(Context con)
+    MCrypt(Context con)  // Change con to your APP Context "  MCrypt(Context MyAppContext)  "
         {
-            mtelemamanger = (TelephonyManager) con.getSystemService(Context.TELEPHONY_SERVICE);
+            mtelemamanger = (TelephonyManager) con.getSystemService(Context.TELEPHONY_SERVICE);  //Change con to your APPContext
             String deviceid = mtelemamanger.getSimSerialNumber(); // Get Simcard Serialnumber
             String kljuc = mtelemamanger.getDeviceId(); // Get Device IMEI
             String genkey = "A" +kljuc; // Add "A" to IMEI Number
-
             String iv = deviceid.substring(Math.max(0, deviceid.length() - 16)); //Use last 16 Numbers as Key
             ivspec = new IvParameterSpec(iv.getBytes());
             String secretKey = genkey.substring(0, 16); // Use the first 16 Numbers from IMEI as Secret Key
@@ -39,6 +38,7 @@ public class MCrypt {
             e.printStackTrace();
         }
         }
+    
     public byte[] encrypt(String text) throws Exception
     {
         if(text == null || text.length() == 0)
@@ -89,7 +89,6 @@ public class MCrypt {
         return decrypted;
     }
 
-
     public static String bytesToHex(byte[] buf)
     {
         char[] chars = new char[2 * buf.length];
@@ -100,7 +99,6 @@ public class MCrypt {
         }
         return new String(chars);
     }
-
 
     private static byte[] hexToBytes(String str) {
         if (str==null) {
@@ -116,8 +114,6 @@ public class MCrypt {
             return buffer;
         }
     }
-
-
 
     private static String padString(String source)
     {

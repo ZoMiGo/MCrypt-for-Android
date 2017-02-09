@@ -1,8 +1,8 @@
 <?php
 class Decoder
 {
-                private $iv;
-                private $key;
+    private $iv; // last 16 numbers from Simcardserialnumber "1234567892497854"
+    private $key;  //first 16 numbers from DeviceID IMEI "A123456789254789"
     public function __construct() {
         global $config;
         $this->iv = $config["Decoder"]["kljuc"];
